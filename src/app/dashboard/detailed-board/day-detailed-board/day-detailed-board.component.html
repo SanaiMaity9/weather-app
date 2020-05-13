@@ -1,0 +1,21 @@
+<div *ngIf="weatherReport.weather" class="container">
+    <div class="row">
+        <div class="col">
+            <img src="assets/img/weather-icons/{{weatherReport.weather[0].icon}}.svg" (error)="errorHandler($event,weatherReport.weather[0].icon)"  >
+        </div>
+        <div class="col">
+            <div class="row">
+              {{getTemparature(weatherReport.temp) | number}}C
+            </div>
+            <div class="row">
+                {{weatherReport.weather[0].description}}
+            </div>
+            <div class="row">
+                Wind: {{weatherReport.speed }}ms {{weatherReport.deg}} deg
+            </div>
+            <div class="row">
+              Pressure: {{weatherReport.pressure}}  
+            </div>
+        </div>
+    </div>
+</div>

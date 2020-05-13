@@ -1,0 +1,31 @@
+<div class="container" *ngIf="weatherDetails.list; else noDetails">
+    <div class="row">
+        <div class="col-10 cityname" >
+            <h4>{{city}}</h4>
+        </div>
+        <div class="col-2">
+            <button  type="button" class="btn btn-flat btn-lg" (click)="refreshDetail()"> <i class="fas fa-sync"></i></button>
+
+        </div>
+    </div>
+    <div class="row day-div">
+        <app-day-detailed-board *ngIf="weatherReport" [weatherReport]="weatherReport"></app-day-detailed-board>
+    </div>
+
+    <div class="row btn-row">
+            <div *ngFor="let report of weatherDetails.list" type="button" class="col" (click)="getreportoftheday(report)">
+                <div class="row">
+                    <p>{{(report.dt * 1000) | date : 'MMM dd'}}</p> </div>
+                <div class="row">
+                    <p>{{(report.dt * 1000) | date : 'EEE'}}</p> </div>
+                <div class="row"><img src="assets/img/weather-icons/{{report.weather[0].icon}}.svg" (error)="errorHandler($event,report.weather[0].icon)"  ></div>
+                <div class="row">
+                    <p>{{getTemparature(report.temp) | number}}C</p> </div>
+            </div>
+    </div>
+</div><ng-template #noDetails>
+  <div class="container location-container">
+      <p>Search your city to know about your locaion's weather </p>
+  </div>
+  </ng-template>
+

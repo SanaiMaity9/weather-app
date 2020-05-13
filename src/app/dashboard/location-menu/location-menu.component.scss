@@ -1,0 +1,41 @@
+.container{
+    height: 100vh;
+    .search-row{
+        border-bottom: 1px solid #303030;
+    box-shadow: 0 2px 0 0 #30303045;
+        .btn-row{
+            align-self: center;
+            button{
+                padding: 0;
+            }
+        }
+        .md-form {
+            margin-bottom: 1rem;
+           
+        }
+        .md-form input[type=text]{
+            color: #303030;
+            border-bottom: 1px solid white;
+        }
+        .md-form input[type=text]:focus:not([readonly]){
+            box-shadow: 0 1px 0 0 #303030;
+    border-bottom: 2px solid #303030;
+    color: black;
+        }
+    }
+
+    .label-row{
+        padding: 5px;
+        color: #ffffffbd;
+    }
+    .location-row{
+        padding: 5px;
+    }
+    .clear-row{
+        position: absolute;
+        bottom: 30px;
+        right: 10%;
+    }
+
+
+}

@@ -1,0 +1,47 @@
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+
+    .background-color-pink{
+        background: #e91e63;
+        [type=button]:hover { /* add outline to focus pseudo-class */
+            background-color: #303030;
+            color: white;
+          }
+        button{
+            color: #303030;
+        }
+      
+
+    }
+    .background-color-black{
+        background: #303030;
+        color: white;
+        button{
+            color: #e91e63;
+        }
+        button:hover{
+            color: #303030;
+            background-color: #e91e63;
+        }
+        [type=button]:hover { /* add outline to focus pseudo-class */
+            background-color: #e91e63;
+            color: #303030;
+          }
+    }
+
+    .mat-dialog-container{
+        overflow: hidden;
+        padding: 15px;
+        background: #e91e63;
+    color: #303030;
+    p{
+        font-size: 20px;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    }
+    }
+
+  
+ }

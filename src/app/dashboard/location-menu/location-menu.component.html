@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row search-row">
+        <div class="col-10">
+            <div class="md-form">
+                <input  placeholder="Type City Name" type="text" id="form1" class="form-control" [formControl]="city">
+              
+              </div>
+        </div>
+        <div class="col-2 btn-row">
+            <button  [disabled]="!city.valid" color="secondary" type="button" class="btn btn-flat btn-lg" (click)="validLocation()"> <i class="fas fa-plus"></i></button>
+           
+        </div>
+    </div>
+    <div class="row label-row"><label>Recent Locations</label></div>
+
+        <div *ngFor="let location of locationList; let i=index"  class="row location-row" >
+           <span class="col-8" (click)="detailedWeather(location)" type="button"> {{location.city}} - {{location.temperature}} {{location.condition}}</span> 
+           <span class="col-2" (click)="refreshLocation(i)" type="button"><i class="fas fa-sync"></i></span>
+           <span class="col-2" (click)="removeLocation(i)" type="button"><i class="fas fa-trash"></i></span>
+        </div>
+
+        <div class="row clear-row">
+            <button type="button" class="btn btn-light" (click)="clearLocationList()">Clear</button>
+        </div>
+</div>
